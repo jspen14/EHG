@@ -13,9 +13,9 @@ public class Main {
 				
 		if(args.length == 3) {
 			if(Character.isDigit(args[1].charAt(0)) && Character.isDigit(args[2].charAt(0))) {
-				String dictionary = args[0];
-				int wordLength = Integer.parseInt(args[1]); // >= 2
-				int numGuesses = Integer.parseInt(args[2]); // >= 1
+				String dictionary = "./src/hangman/dictionaryMe.txt"; //args[0];
+				int wordLength = 4; //Integer.parseInt(args[1]); // >= 2
+				int numGuesses = 4; //Integer.parseInt(args[2]); // >= 1
 				
 				
 				if(wordLength>=2 && numGuesses>=1) {
@@ -95,6 +95,7 @@ public class Main {
 		
 		if(backend.gameWon()) {
 			System.out.println("You win!");
+			System.out.println("The word was: " + backend.getPattern());
 		}
 		else {
 			System.out.println("You lose!");
