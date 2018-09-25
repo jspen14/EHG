@@ -45,7 +45,7 @@ public class Main {
 	}
 	
 	private static void gameInteraction(EvilHangmanGame backend)throws IOException{
-		Scanner scanner = new Scanner(System.in).useDelimiter("(\\b|\\B)");
+		Scanner scanner = new Scanner(System.in);
 		String guessString = "";
 		char guessChar = 0;
 		boolean badInput = true;
@@ -56,7 +56,7 @@ public class Main {
 			while(badInput){
 				printConsole(backend.getNumGuessesLeft(), backend.getPreviouslyGuessedLetters(), backend.getPattern());
 				System.out.print("Enter guess: ");
-				guessString = scanner.next();
+				guessString = scanner.nextLine();
 				
 				if(guessString.length()!=1){
 					System.out.println("Invalid Input. Enter a SINGLE alphabetic character.");
