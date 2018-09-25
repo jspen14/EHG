@@ -19,11 +19,11 @@ public class Main {
 				
 				
 				if(wordLength>=2 && numGuesses>=1) {
-					EvilHangmanGame backend = new EvilHangmanGame(wordLength, numGuesses);
+					EvilHangmanGame backend = new EvilHangmanGame();
 					File dictFile = new File(dictionary);
 					
 					backend.startGame(dictFile, wordLength);
-					
+					backend.setGuessesCount(numGuesses);
 					if(backend.getDictionary().size()==0) {
 						System.out.println("There are no words to guess.");
 					}

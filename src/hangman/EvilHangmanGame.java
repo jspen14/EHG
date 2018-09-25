@@ -16,15 +16,15 @@ public class EvilHangmanGame implements IEvilHangmanGame {
 	private int numGuesses;
 	private int numInstances;
 	
-	public EvilHangmanGame(int wordLength, int guesses){
-		this.wordLength=wordLength;
+	public EvilHangmanGame(){
 		this.remainingWords = new TreeSet<String>();
 		this.previouslyGuessedLetters = new TreeSet<String>();
-		this.setGuessesCount(guesses);
 	}
 	
 	@Override
 	public void startGame(File dictionary, int wordLength) {
+		this.wordLength=wordLength;
+
 		Scanner scanner = null;
 		try {
 			scanner = new Scanner(dictionary);
@@ -214,7 +214,7 @@ public class EvilHangmanGame implements IEvilHangmanGame {
 	}
 	
 	// GETTERS & SETTERS
-	private void setGuessesCount(int guesses) {
+	public void setGuessesCount(int guesses) {
 		this.numGuesses=guesses;
 	}
 	
